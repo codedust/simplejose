@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2021 2021 Marco Holz <code-iethi9Lu@marcoholz.de>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+[submodule "panva-jose"]
+	path = panva-jose
+	url = git@github.com:panva/jose.git

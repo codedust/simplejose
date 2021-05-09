@@ -1,0 +1,62 @@
+<!--
+SPDX-FileCopyrightText: 2021 Marco Holz <code-iethi9Lu@marcoholz.de>
+
+SPDX-License-Identifier: EUPL-1.2
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bulma.min.css">
+  <script type="module" src="validate-jwk.js"></script>
+  <script type="module" src="jose-demo.js"></script>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">JWE file encryption demo</h1>
+      <p class="subtitle">Message encryption demo using <a href="https://github.com/panva/jose">panva/jose</a></p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <input type="file" id="input" class="block">
+          <div class="block">
+            <label class="checkbox">
+              <input id="showJWE" type="checkbox">
+              Show encrypted message (displaying large files as a JWE string might slow down your browser)
+            </label>
+          </div>
+          <div class="block">
+            <textarea id="txtPayload" name="payload" rows="8" cols="80">{
+  "F00000013": "Mustermann",
+  "G99000001": {
+    "F99000002": "string",
+    "F99000003": 42
+  }
+}</textarea>
+          </div>
+          <div class="block">
+            <button id="btnGenJWK">Generate JWK</button>
+            <button id="btnEncData">Encrypt data</button>
+            <button id="btnEncFile">Encrypt file</button>
+          </div>
+        </div>
+        <div class="column">
+          <img src="" height="200" alt="Preview of decrypted image...">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <pre id="log" class="block"></pre>
+      <code style="display: block; overflow: scroll; min-height: 5em;" class="block"></code>
+    </div>
+  </section>
+</body>
+</html>

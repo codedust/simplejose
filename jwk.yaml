@@ -1,0 +1,54 @@
+# SPDX-FileCopyrightText: 2021 2020-2021 FITKO <fit-connect@fitko.de>
+#
+# SPDX-License-Identifier: EUPL-1.2
+
+title: JSON Web Key (JWK)
+type: object
+description: JSON Web Key - RFC 7517
+required:
+  - kty
+#  - kid
+#  - x5c
+properties:
+  kty:
+    type: string
+    description: Key Type
+    enum:
+      - EC
+      - RSA
+      - oct
+      - OKP
+  use:
+    type: string
+    description: Public Key Use
+    enum:
+      - sig
+      - enc
+  key_ops:
+    type: array
+    description: Key Operations
+    items:
+      type: string
+      enum:
+        - sign
+        - verify
+        - encrypt
+        - decrypt
+        - wrapKey
+        - unwrapKey
+        - deriveKey
+        - deriveBits
+  alg:
+    type: string
+    description: Algorithm
+    enum:
+      - PS512
+      - RSA-OAEP-256
+  kid:
+    description: Key ID
+    type: string
+  x5c:
+    description: X.509 Certificate Chain
+    type: array
+    items:
+      type: string
